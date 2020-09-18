@@ -1,10 +1,11 @@
 {
   "name": "react-scrollfade",
-  "version": "1.0.0-alpha.0",
+  "version": "1.0.0-alpha.1",
   "description": "A React component for fading out the bottom of a scrolling element.",
-  "main": "index.js",
+  "main": "./dist/index.js",
   "scripts": {
-    "build": "webpack"
+    "build": "npm run clean && tsc",
+    "clean": "rimraf ./dist"
   },
   "repository": {
     "type": "git",
@@ -29,16 +30,12 @@
     "react-dom": "^16.0.0"
   },
   "devDependencies": {
-    "babel": "^6.23.0",
-    "babel-core": "^6.26.3",
-    "babel-loader": "^8.1.0",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-0": "^6.24.1",
-    "css-loader": "^4.3.0",
-    "path": "^0.12.7",
-    "style-loader": "^1.2.1",
-    "webpack": "^4.44.1",
-    "webpack-cli": "^3.3.12"
+    "@types/lodash": "^4.14.161",
+    "@types/node": "^14.11.1",
+    "@types/prop-types": "^15.7.3",
+    "@types/react": "^16.9.49",
+    "rimraf": "^3.0.2",
+    "ts-loader": "^8.0.3",
+    "typescript": "^4.0.2"
   }
 }
