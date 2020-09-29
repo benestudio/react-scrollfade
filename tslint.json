@@ -1,0 +1,20 @@
+{
+  "defaultSeverity": "error",
+  "extends": ["tslint:latest", "tslint-react", "tslint-no-unused", "tslint-config-airbnb", "tslint-config-prettier"],
+  "rulesDirectory": ["tslint-plugin-prettier"],
+  "rules": {
+    "variable-name": false,
+    "no-boolean-literal-compare": true,
+    "import-name": false,
+    "jsx-no-lambda": false,
+    "object-shorthand-properties-first": false,
+    "no-unused": true,
+    "no-submodule-imports": false,
+    "prettier": true,
+    "no-any": true,
+    "no-console": false,
+    "array-type": [true, "array"],
+    "object-literal-sort-keys": false,
+    "curly": true
+  }
+}
