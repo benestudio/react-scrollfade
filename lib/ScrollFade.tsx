@@ -1,85 +1,36 @@
-import React, { createRef } from 'react'
-import { object } from 'prop-types'
-import throttle from 'lodash.throttle'
+import React, { useEffect, useRef } from 'react';
+import { throttle } from 'lodash';
 
-import styles, { fadeTransparentPercentage, fadeWhitePercentage } from './styles'
+const easeIn = (t: number, alpha: number) => Math.pow(t, alpha);
 
-export interface IScrollFadeProps {
-    scrollElement: EventTarget & HTMLElement
-}
+const getMask = (opacity: number) => `linear-gradient(180deg, black, rgba(255, 255, 255, ${opacity})) center bottom/100%
+    56px no-repeat,
+linear-gradient(180deg, black, black) center top/100% calc(100% - 56px)
+    no-repeat`;
 
-interface IScrollFadeState {
-    scrollable: boolean;
-}
+export const ScrollFade = () => {
+    const rootRef = useRef<HTMLDivElement>(null);
 
-const easeIn = (t: number, alpha: number, reverseDirection = false) => {
-    const y = Math.pow(t, alpha)
-    return reverseDirection ? 1 - y : y
-}
+    useEffect(() => {
+        const scrollElement = rootRef.current?.parentElement;
 
-const getBackgroundGradient = (overalOpacity: number) =>
-    `linear-gradient(0deg, rgba(255, 255, 255) ${fadeWhitePercentage * overalOpacity}%, rgba(255, 255, 255, 0) ${
-        fadeTransparentPercentage * overalOpacity
-    }%)`
-
-export class ScrollFade extends React.Component<IScrollFadeProps, IScrollFadeState> {
-    public static propTypes = {
-        scrollElement: object.isRequired,
-    }
-
-    private fadeElement: React.RefObject<HTMLDivElement> = createRef();
-    private currentHandler: EventListener  | null = null;
-
-    public state = {
-        scrollable: false,
-    }
-
-    getScrollHandler(fadeElement: React.RefObject<HTMLDivElement>) {
-        return throttle((e) => {
-            if (fadeElement.current) {
-                const { offsetHeight, scrollTop, scrollHeight } = e.target
-                const opacity = easeIn(Math.min(1, scrollTop / (scrollHeight - offsetHeight)), 10, true)
-                // applying change directly for performance
-                fadeElement.current.style.background = getBackgroundGradient(opacity)
+        if (scrollElement) {
+            const { offsetHeight, scrollHeight } = scrollElement;
+            if (offsetHeight !== scrollHeight) {
+                scrollElement.style.mask = getMask(1);
             }
-        }, 100)
-    }
 
-    componentDidUpdate() {
-        const handler = this.getScrollHandler(this.fadeElement)
-
-        if (this.props.scrollElement) {
-            this.props.scrollElement.removeEventListener('scroll', this.currentHandler)
-            this.props.scrollElement.addEventListener('scroll', handler)
-            this.currentHandler = handler
+            scrollElement?.addEventListener(
+                'scroll',
+                throttle(() => {
+                    const { offsetHeight: elementHeight, scrollHeight: elementWidth, scrollTop } = scrollElement;
+                    const opacity = easeIn(scrollTop / (elementHeight - elementWidth), 10);
+                    const mask = getMask(opacity);
+                    scrollElement.style.mask = mask;
+                }, 100)
+            );
         }
-    }
+    }, []);
 
-    componentDidMount() {
-        const handler = this.getScrollHandler(this.fadeElement)
-
-        if (this.props.scrollElement) {
-            this.props.scrollElement.addEventListener('scroll', handler)
-            this.currentHandler = handler
-        }
-
-        this.setState({
-            scrollable: this.props.scrollElement.offsetHeight < this.props.scrollElement.scrollHeight,
-        })
-    }
-
-    render() {
-        return (
-            <>
-                <div
-                    ref={this.fadeElement}
-                    className="scroll-fade"
-                    style={{
-                        background: getBackgroundGradient(this.state.scrollable ? 1 : 0),
-                    }}
-                />
-                <style jsx={true}>{styles}</style>
-            </>
-        )
-    }
-}
+    return <div className="scroll-fade" ref={rootRef} />;
+};
