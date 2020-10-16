@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollFade } from '../dist/ScrollFade';
+import { ScrollFade } from '../lib/ScrollFade';
 
 function Simple() {
     return (
