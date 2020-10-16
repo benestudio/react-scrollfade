@@ -7,7 +7,7 @@
     "build": "npm run clean && tsc",
     "lint": "tslint --fix -c tslint.json -p .",
     "clean": "rimraf ./dist",
-    "examples": "npx parcel examples/index.html"
+    "examples": "npx parcel examples/index.html -d examples/dist"
   },
   "repository": {
     "type": "git",
