@@ -17,9 +17,7 @@ export const ScrollFade = () => {
         if (scrollElement) {
             const { offsetHeight, scrollHeight } = scrollElement;
             if (offsetHeight !== scrollHeight) {
-                const mask = getMask(1);
-                scrollElement.style.webkitMask = mask;
-                scrollElement.style.mask =mask;
+                scrollElement.style.mask = getMask(1);
             }
 
             scrollElement?.addEventListener(
@@ -29,7 +27,6 @@ export const ScrollFade = () => {
                     const opacity = easeIn(scrollTop / (elementHeight - elementWidth), 10);
                     const mask = getMask(opacity);
                     scrollElement.style.mask = mask;
-                    scrollElement.style.webkitMask = mask;
                 }, 100)
             );
         }
