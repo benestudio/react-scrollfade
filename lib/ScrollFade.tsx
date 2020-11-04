@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { throttle } from 'lodash';
+import throttle from 'lodash.throttle';
 
 const easeIn = (t: number, alpha: number) => Math.pow(t, alpha);
 
