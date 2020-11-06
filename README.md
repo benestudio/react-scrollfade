@@ -30,4 +30,7 @@ There are interactive examples.
 
 ## Contribution ##
 
-The examples also serve as a development server to ease contribution.
+We welcome contributions in the form of pull requests.
+The examples also serve as a development server to ease development.
+
+If you have any issues or suggestions please open a new Issue.
