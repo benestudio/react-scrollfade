@@ -1,57 +1,59 @@
 {
-  "name": "react-scrollfade",
-  "version": "1.0.0-alpha.1",
-  "description": "A React component for fading out the bottom of a scrolling element.",
-  "main": "./dist/index.js",
-  "scripts": {
-    "build": "npm run clean && tsc",
-    "lint": "tslint --fix -c tslint.json -p .",
-    "clean": "rimraf ./dist"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@bitbucket.org/benestudio/react-scrollfade.git"
-  },
-  "keywords": [
-    "React",
-    "scroll",
-    "fade",
-    "fading",
-    "overflow"
-  ],
-  "author": "Levente Rozsenich @ Benestudio",
-  "license": "ISC",
-  "homepage": "https://bitbucket.org/benestudio/react-scrollfade#readme",
-  "files": [
-    "dist/**/*"
-  ],
-  "peerDependencies": {
-    "lodash.throttle": "^4.1.1",
-    "prop-types": "^15.6.0",
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0"
-  },
-  "devDependencies": {
-    "@types/lodash.throttle": "^4.1.1",
-    "@types/node": "^14.11.1",
-    "@types/prop-types": "^15.7.3",
-    "@types/react": "^16.9.49",
-    "husky": "^4.3.0",
-    "prettier": "2.1.2",
-    "rimraf": "^3.0.2",
-    "ts-loader": "^8.0.3",
-    "tslint": "^6.1.3",
-    "tslint-config-airbnb": "^5.11.2",
-    "tslint-config-prettier": "^1.18.0",
-    "tslint-config-standard": "^9.0.0",
-    "tslint-no-unused": "^0.2.0-alpha.1",
-    "tslint-plugin-prettier": "^2.3.0",
-    "tslint-react": "^5.0.0",
-    "typescript": "^4.0.2"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint"
+    "name": "react-scrollfade",
+    "version": "1.0.0-alpha.1",
+    "description": "A React component for fading out the bottom of a scrolling element.",
+    "main": "./dist/index.js",
+    "scripts": {
+        "build": "npm run clean && tsc",
+        "lint": "tslint --fix -c tslint.json -p .",
+        "clean": "rimraf ./dist",
+        "examples": "npx parcel examples/index.html -d examples/dist"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+ssh://git@bitbucket.org/benestudio/react-scrollfade.git"
+    },
+    "keywords": [
+        "React",
+        "scroll",
+        "fade",
+        "fading",
+        "overflow"
+    ],
+    "author": "Levente Rozsenich @ Benestudio",
+    "license": "ISC",
+    "homepage": "https://bitbucket.org/benestudio/react-scrollfade#readme",
+    "files": [
+        "dist/**/*"
+    ],
+    "peerDependencies": {
+        "lodash.throttle": "^4.1.1",
+        "prop-types": "^15.6.0",
+        "react": "^16.0.0",
+        "react-dom": "^16.0.0"
+    },
+    "devDependencies": {
+        "@types/lodash.throttle": "^4.1.1",
+        "@types/node": "^14.11.1",
+        "@types/prop-types": "^15.7.3",
+        "@types/react": "^16.9.49",
+        "@types/react-dom": "^16.9.8",
+        "husky": "^4.3.0",
+        "prettier": "2.1.2",
+        "rimraf": "^3.0.2",
+        "ts-loader": "^8.0.3",
+        "tslint": "^6.1.3",
+        "tslint-config-airbnb": "^5.11.2",
+        "tslint-config-prettier": "^1.18.0",
+        "tslint-config-standard": "^9.0.0",
+        "tslint-no-unused": "^0.2.0-alpha.1",
+        "tslint-plugin-prettier": "^2.3.0",
+        "tslint-react": "^5.0.0",
+        "typescript": "^4.0.2"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "npm run lint"
+        }
     }
-  }
 }
