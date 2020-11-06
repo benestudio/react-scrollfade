@@ -7,7 +7,7 @@
         "build": "npm run clean && tsc",
         "lint": "tslint --fix -c tslint.json -p .",
         "clean": "rimraf ./dist",
-        "examples": "npx parcel examples/index.html -d examples/dist"
+        "examples": "npx parcel --no-autoinstall examples/index.html -d examples/dist"
     },
     "repository": {
         "type": "git",
@@ -47,7 +47,10 @@
         "tslint-no-unused": "^0.2.0-alpha.1",
         "tslint-plugin-prettier": "^2.3.0",
         "tslint-react": "^5.0.0",
-        "typescript": "^4.0.2"
+        "typescript": "^4.0.2",
+        "prop-types": "^15.6.0",
+        "react": "^16.0.0",
+        "react-dom": "^16.0.0"
     },
     "husky": {
         "hooks": {
