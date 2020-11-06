@@ -22,6 +22,11 @@ The fade makes the bottom of the element transparent, so the color of the fade i
     </div>
 ```
 
+### Browser Support ###
+
+The component utilizes CSS masks and -webkit–masks as a fallbak.
+See browser compatibilities here: https://caniuse.com/?search=mask 
+
 ### Examples ###
 
 There are interactive examples.
