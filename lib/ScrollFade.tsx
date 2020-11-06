@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from 'react';
-import throttle from 'lodash.throttle';
 
 const easeIn = (t: number, alpha: number) => Math.pow(t, alpha);
 
@@ -20,15 +19,12 @@ export const ScrollFade = () => {
                 scrollElement.style.mask = getMask(1);
             }
 
-            scrollElement?.addEventListener(
-                'scroll',
-                throttle(() => {
-                    const { offsetHeight: elementHeight, scrollHeight: elementWidth, scrollTop } = scrollElement;
-                    const opacity = easeIn(scrollTop / (elementHeight - elementWidth), 10);
-                    const mask = getMask(opacity);
-                    scrollElement.style.mask = mask;
-                }, 100)
-            );
+            scrollElement?.addEventListener('scroll', () => {
+                const { offsetHeight: elementHeight, scrollHeight: elementWidth, scrollTop } = scrollElement;
+                const opacity = easeIn(scrollTop / (elementHeight - elementWidth), 10);
+                const mask = getMask(opacity);
+                scrollElement.style.mask = mask;
+            });
         }
     }, []);
 
