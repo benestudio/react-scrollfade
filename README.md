@@ -1,29 +1,41 @@
-# README #
+# React Scrollfade #
 
-This README would normally document whatever steps are necessary to get your application up and running.
+React Scrollfade is a React component designed to dynamically fade out the bottom of a scrollable element based on the scrollbars position.
 
-### What is this repository for? ###
+## How to use it ##
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+It works with zero configuration needed. Just include it as a direct child of the scrollable element.
+The fade makes the bottom of the element transparent, so the color of the fade is determined by what is under it.
 
-### How do I get set up? ###
+```html
+<div
+        style={{
+            width: 50,
+            height: 50,
+            overflowY: 'auto',
+            background: 'red',
+        }}
+    >
+        <ScrollFade />
+        Dolor amet eu occaecat excepteur do adipisicing cillum duis. Est ullamco ullamco sit ea irure consequat
+        id do ex enim consectetur nisi duis elit. Qui mollit magna exercitation est sit.
+    </div>
+```
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+### Browser Support ###
 
-### Contribution guidelines ###
+The component utilizes CSS masks and -webkit–masks as a fallbak.
+See browser compatibilities here: https://caniuse.com/?search=mask 
 
-* Writing tests
-* Code review
-* Other guidelines
+### Examples ###
 
-### Who do I talk to? ###
+There are interactive examples.
 
-* Repo owner or admin
-* Other community or team contact
+``` npm run examples ``` starts an instance where you can look at them.
+
+## Contribution ##
+
+We welcome contributions in the form of pull requests.
+The examples also serve as a development server to ease development.
+
+If you have any issues or suggestions please open a new Issue.
