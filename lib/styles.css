@@ -1,7 +1,3 @@
 .scroll-fade {
-    height: 52px;
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    pointer-events: none;
+    display: none;
 }
