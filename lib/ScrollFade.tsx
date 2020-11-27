@@ -12,7 +12,7 @@ export const ScrollFade = () => {
 
     const onScroll = useCallback(() => {
         const scrollElement = rootRef.current?.parentElement;
-        if(scrollElement){
+        if (scrollElement) {
             const { offsetHeight: elementHeight, scrollHeight: elementWidth, scrollTop } = scrollElement;
             const opacity = easeIn(scrollTop / (elementHeight - elementWidth), 10);
             const mask = getMask(opacity);
@@ -20,7 +20,7 @@ export const ScrollFade = () => {
             scrollElement.style.mask = mask;
             scrollElement.style.webkitMask = mask;
         }
-    }, [])
+    }, []);
 
     useEffect(() => {
         const scrollElement = rootRef.current?.parentElement;
@@ -35,7 +35,7 @@ export const ScrollFade = () => {
 
             scrollElement.addEventListener('scroll', onScroll);
             return () => scrollElement.removeEventListener('scroll', onScroll);
-        } 
+        }
     }, []);
 
     return <div className="scroll-fade" ref={rootRef} />;
