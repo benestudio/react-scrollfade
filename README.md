@@ -7,7 +7,7 @@ React Scrollfade is a React component designed to dynamically fade out the botto
 It works with zero configuration needed. Just include it as a direct child of the scrollable element.
 The fade makes the bottom of the element transparent, so the color of the fade is determined by what is under it.
 
-```html
+```jsx
 <div
         style={{
             width: 50,
@@ -24,7 +24,7 @@ The fade makes the bottom of the element transparent, so the color of the fade i
 
 ### Browser Support ###
 
-The component utilizes CSS masks and -webkitâ€“masks as a fallbak.
+The component utilizes CSS masks and -webkit–masks as a fallbak.
 See browser compatibilities here: https://caniuse.com/?search=mask 
 
 ### Examples ###
