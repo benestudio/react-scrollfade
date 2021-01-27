@@ -8,10 +8,14 @@ It works with zero configuration needed. Just include it as a direct child of th
 The fade makes the bottom of the element transparent, so the color of the fade is determined by what is under it.
 
 ```jsx
-<div
+import React from "react";
+import ScrollFade from "@benestudioco/react-scrollfade";
+
+export const Example = () =>
+ <div
         style={{
-            width: 50,
-            height: 50,
+            width: 200,
+            height: 100,
             overflowY: 'auto',
             background: 'red',
         }}
@@ -24,7 +28,7 @@ The fade makes the bottom of the element transparent, so the color of the fade i
 
 ### Browser Support ###
 
-The component utilizes CSS masks and -webkit–masks as a fallbak.
+The component utilizes CSS masks and -webkitï¿½masks as a fallbak.
 See browser compatibilities here: https://caniuse.com/?search=mask 
 
 ### Examples ###
@@ -36,6 +40,6 @@ There are interactive examples.
 ## Contribution ##
 
 We welcome contributions in the form of pull requests.
-The examples also serve as a development server to ease development.
+The examples also serve as a development server.
 
-If you have any issues or suggestions please open a new Issue.
+If you have any issues, questions or suggestions please open a new Issue.
