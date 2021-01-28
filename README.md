@@ -28,7 +28,7 @@ export const Example = () =>
 
 ### Browser Support ###
 
-The component utilizes CSS masks and -webkit�masks as a fallbak.
+The component utilizes CSS masks and -webkit�masks as a fallback.
 See browser compatibilities here: https://caniuse.com/?search=mask 
 
 ### Examples ###
