@@ -1,6 +1,6 @@
 {
     "name": "@benestudioco/react-scrollfade",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "A React component for fading out the bottom of a scrolling element.",
     "main": "./dist/index.js",
     "scripts": {
