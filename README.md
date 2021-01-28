@@ -2,6 +2,8 @@
 
 React Scrollfade is a React component designed to dynamically fade out the bottom of a scrollable element based on the scrollbars position.
 
+![demo](./scroll_fade_example.png)
+
 ## Installation ##
 
 You can install the library using npm:
