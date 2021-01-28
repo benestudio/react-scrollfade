@@ -1,7 +1,7 @@
 import React from 'react';
-import { ScrollFade } from '../lib/ScrollFade';
+import ScrollFade from '../lib/ScrollFade';
 
-export const Simple = () => (
+const Simple = () => (
     <div>
         <div
             style={{

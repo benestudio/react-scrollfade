@@ -7,7 +7,7 @@ const getMask = (opacity: number) => `linear-gradient(180deg, black, rgba(255, 2
 linear-gradient(180deg, black, black) center top/100% calc(100% - 56px)
     no-repeat`;
 
-export const ScrollFade = () => {
+const ScrollFade = () => {
     const rootRef = useRef<HTMLDivElement>(null);
 
     const onScroll = useCallback(() => {
@@ -40,3 +40,5 @@ export const ScrollFade = () => {
 
     return <div className="scroll-fade" ref={rootRef} />;
 };
+
+export default ScrollFade;
